@@ -18,6 +18,10 @@ export default {
   h1 {
     font-size: $fz-500;
     font-weight: 400;
+
+    @include mq-up($medium) {
+      font-size: 9.375rem;
+    }
   }
 
   h2 {

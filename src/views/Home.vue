@@ -46,21 +46,53 @@ export default {
 
   .wrapper {
     margin-top: 6rem;
+
+    @include mq-up($medium) {
+      margin-top: 12rem;
+    }
+
+    @include mq-up($large) {
+      display: flex;
+    }
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h5,
     p {
       color: $clr-purple;
     }
 
+    p {
+      max-width: 49ch;
+      line-height: 28;
+    }
+
     h1 {
       color: $clr-white;
+    }
+
+    @include mq-up($large) {
+      width: 100%;
+      padding: 8.8125rem;
+      align-items: flex-start;
+      justify-content: flex-end;
+      text-align: left;
     }
   }
 
   &__cta-container {
+    @include mq-up($large) {
+      display: flex;
+      width: 100%;
+      padding: 8.8125rem;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
     button {
+      position: relative;
       width: 9.375rem;
       height: 9.375rem;
       margin-top: 5rem;
@@ -71,6 +103,24 @@ export default {
       font-size: 1.25rem;
       font-weight: 400;
       letter-spacing: 1.25px;
+      cursor: pointer;
+
+      @include mq-up($medium) {
+        width: 15.125rem;
+        height: 15.125rem;
+        margin-top: 6.5rem;
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+
+      @include mq-up($large) {
+        width: 17.125rem;
+        height: 17.125rem;
+      }
+    }
+
+    button:hover {
+      outline: 100px solid $clr-light-grey;
     }
   }
 }
