@@ -8,3 +8,59 @@ $x-large: 81.25em; //1300px
 $clr-black: hsl(230, 35%, 7%);
 $clr-purple: hsl(231, 77%, 90%);
 $clr-white: hsl(0, 0%, 100%);
+
+// font-sizes
+
+$fz-100: clamp(1rem, 0.736rem + 1.126vw, 1.75rem);
+$fz-200: clamp(1rem, 0.9849rem + 1.5vw, 2rem);
+$fz-300: clamp(2.5rem, 2.1479rem + 1.5vw, 3.5rem);
+$fz-400: clamp(3.5rem, 2.5317rem + 4.131vw, 6.25rem);
+$fz-500: clamp(5rem, 3.4592rem + 6.572vw, 9.375rem);
+
+/*
+calculate preferred value for clamp function
+
+slope = (maxFontSize - minFontSize) / (maxWidth - minWidth)
+yAxisIntersection = -minWidth * slope + minFontSize
+
+preferredValue = yAxisIntersection[rem] + (slope * 100)[vw]
+
+e.g
+font-size: clamp(1rem, -0.875rem + 8.333vw, 3.5rem);
+
+
+
+vw
+90 - 23.4375 = 66.5625
+
+h1 
+9.375 - 5 = 4.375
+slope = 0.065727
+y-axis-intersection = 3.4592
+preferred value =
+
+h2
+6.25 - 3.5 = 2.75
+slope = 0.04131
+y-axis-intersection = 2.5317
+preferred value =
+
+h3
+3.5 - 2.5 = 1
+slope = 0.01502
+y-axis-intersection = 2.1479
+preferred value =
+
+h4
+2 - 1 = 1
+slope = 0.01502
+y-axis-intersection = 0,9849
+preferred value =
+
+h5
+1.75 - 1 = 0.75
+slope = 0.01126
+y-axis-intersection = 0.736
+preferred value =
+
+*/

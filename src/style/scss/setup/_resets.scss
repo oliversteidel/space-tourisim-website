@@ -14,7 +14,7 @@ html:focus-within {
 
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
+  //text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
 
@@ -25,10 +25,12 @@ h2,
 h3,
 h4 {
   font-family: "Bellefair", serif;
+  font-weight: 400;
 }
 
 .subheading1 {
   font-family: "Bellefair", serif;
+  font-weight: 400;
 }
 
 h5,
@@ -36,44 +38,18 @@ h5,
 .nav-text,
 .body-text {
   font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
 }
 
-// font-size
-
-h1 {
-  font-size: 9.375rem;
-}
-
-h2 {
-  font-size: 6.25rem;
-}
-
-h3 {
-  font-size: 3.5rem;
-}
-
-h4 {
-  font-size: 2rem;
-}
-
-h5 {
-  font-size: 1.75rem;
-  letter-spacing: 4.75em;
-}
-
-.subheading1 {
-  font-size: 1.75rem;
-}
-
-.subheading2 {
-  font-size: 0.875rem;
-  letter-spacing: 2.35;
-}
-
-.nav-text,
-.body-text {
-  font-size: 1rem;
-  letter-spacing: 2.7em;
+h1,
+h2,
+h3,
+h4,
+h5,
+.subheading1,
+.subheading2,
+.nav-text {
+  text-transform: uppercase;
 }
 
 // a-elements which have a class are not underlined
