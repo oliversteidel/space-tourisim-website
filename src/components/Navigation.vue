@@ -138,8 +138,8 @@ export default {
       position: absolute;
       content: "";
       top: 50%;
-      left: -55%;
-      width: 60%;
+      left: calc(-55% - 100vw + 90rem);
+      width: calc(60% + 100vw - 90rem);
       height: 2px;
       background-color: $clr-light-grey;
     }
