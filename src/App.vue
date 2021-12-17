@@ -1,6 +1,14 @@
 <template>
+  <Navigation />
   <router-view />
 </template>
+
+<script>
+import Navigation from "./components/Navigation.vue";
+export default {
+  components: { Navigation },
+};
+</script>
 
 <style lang="scss">
 @use "./style/scss/setup/index" as *;
@@ -29,7 +37,15 @@
 
   h5 {
     font-size: $fz-100;
-    letter-spacing: 4.75px;
+    letter-spacing: 2.7px;
+
+    @include mq-up($medium) {
+      letter-spacing: 3.38px;
+    }
+
+    @include mq-up($large) {
+      letter-spacing: 4.75px;
+    }
   }
 
   .subheading1 {
@@ -51,7 +67,18 @@
   }
 
   .body-text {
+    font-size: 0.9375rem;
     line-height: 25px;
+
+    @include mq-up($medium) {
+      font-size: 1rem;
+      line-height: 28px;
+    }
+
+    @include mq-up($large) {
+      font-size: 1.125rem;
+      line-height: 32px;
+    }
   }
 }
 

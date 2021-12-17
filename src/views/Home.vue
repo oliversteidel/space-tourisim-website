@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="wrapper">
-      <div class="home--content">
+      <div class="home__content">
         <h5>so, you want to travel to</h5>
         <h1>space</h1>
         <p class="body-text">
@@ -11,8 +11,8 @@
           experience!
         </p>
       </div>
-      <div class="home--cta-container">
-        <button class="home--cta">EXPLORE</button>
+      <div class="home__cta-container">
+        <button class="home__cta">EXPLORE</button>
       </div>
     </div>
   </div>
@@ -35,7 +35,11 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 
-  &--content {
+  .wrapper {
+    margin-top: 6rem;
+  }
+
+  &__content {
     h5,
     p {
       color: $clr-purple;
@@ -46,7 +50,7 @@ export default {
     }
   }
 
-  &--cta-container {
+  &__cta-container {
     button {
       width: 9.375rem;
       height: 9.375rem;

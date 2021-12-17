@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
 
 *,
 *::before,
@@ -35,9 +35,13 @@ h4 {
 
 h5,
 .subheading2,
-.nav-text,
-.body-text {
+.nav-text {
   font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+}
+
+.body-text {
+  font-family: "Barlow", sans-serif;
   font-weight: 400;
 }
 
