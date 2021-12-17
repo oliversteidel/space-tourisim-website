@@ -36,6 +36,14 @@ export default {
   background-size: cover;
   text-align: center;
 
+  @include mq-up($medium) {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+
+  @include mq-up($large) {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
+
   .wrapper {
     margin-top: 6rem;
   }
