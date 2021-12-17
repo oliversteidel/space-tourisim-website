@@ -34,6 +34,7 @@ export default {
   background-image: url("../assets/home/background-home-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  text-align: center;
 
   .wrapper {
     margin-top: 6rem;
@@ -54,6 +55,7 @@ export default {
     button {
       width: 9.375rem;
       height: 9.375rem;
+      margin-top: 5rem;
       color: $clr-black;
       background: $clr-white;
       border: none;

@@ -13,9 +13,6 @@ export default {
 <style lang="scss">
 @use "./style/scss/setup/index" as *;
 #app {
-  text-align: center;
-  color: #2c3e50;
-
   // font-size
 
   h1 {
