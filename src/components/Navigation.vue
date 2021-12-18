@@ -6,12 +6,18 @@
     <div class="nav__links-container" :class="{ open: navOpen }">
       <ul class="nav__links">
         <li class="nav__link">
-          <router-link :to="{ name: 'Home' }" class="nav-text"
+          <router-link
+            :to="{ name: 'Home' }"
+            class="nav-text"
+            @click="toggleNav"
             ><span>00</span>HOME</router-link
           >
         </li>
         <li class="nav__link">
-          <router-link :to="{ name: 'Destination' }" class="nav-text"
+          <router-link
+            :to="{ name: 'Destination' }"
+            class="nav-text"
+            @click="toggleNav"
             ><span>01</span>DESTINATION</router-link
           >
         </li>
@@ -55,6 +61,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   background: transparent;
+  z-index: 100;
 
   @include mq-up($large) {
     margin-top: 2.5rem;
