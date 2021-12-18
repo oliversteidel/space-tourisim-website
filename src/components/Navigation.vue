@@ -6,10 +6,14 @@
     <div class="nav__links-container" :class="{ open: navOpen }">
       <ul class="nav__links">
         <li class="nav__link">
-          <a href="#" class="nav-text"><span>00</span>HOME</a>
+          <router-link :to="{ name: 'Home' }" class="nav-text"
+            ><span>00</span>HOME</router-link
+          >
         </li>
         <li class="nav__link">
-          <a href="#" class="nav-text"><span>01</span>DESTINATION</a>
+          <router-link :to="{ name: 'Destination' }" class="nav-text"
+            ><span>01</span>DESTINATION</router-link
+          >
         </li>
         <li class="nav__link">
           <a href="#" class="nav-text"><span>02</span>CREW</a>
