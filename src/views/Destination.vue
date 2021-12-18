@@ -3,25 +3,36 @@
     <h5><span>01</span>pick your destination</h5>
     <div class="destination__planet">
       <img
-        src="..\assets\destination\image-moon.webp"
+        :src="require(`@/assets/destination/image-${selectedMoon.name}.webp`)"
         alt=""
-        class="destination__planet__img"
       />
     </div>
     <div class="destination__info">
       <MoonSelector :moons="moons" />
+      <MoonInfo :moon="selectedMoon" />
     </div>
   </div>
 </template>
 
 <script>
 import MoonSelector from "../components/MoonSelector.vue";
+import MoonInfo from "../components/MoonInfo.vue";
+
 export default {
   name: "Destination",
-  components: { MoonSelector },
+  components: { MoonSelector, MoonInfo },
   computed: {
     moons() {
       return this.$store.state.moons;
+    },
+    selectedMoon() {
+      let result;
+      this.moons.forEach((moon) => {
+        if (moon.isSelected) {
+          result = moon;
+        }
+      });
+      return result;
     },
   },
 };
@@ -35,7 +46,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 6rem;
+  padding: 6rem 1.5rem 1.5rem 1.5rem;
   background-image: url("../assets/destination/background-destination-mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -57,10 +68,16 @@ export default {
     width: 100%;
     padding: 1.875rem;
 
-    &__img {
+    img {
       width: 10.625rem;
       height: auto;
     }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>
