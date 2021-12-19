@@ -1,15 +1,17 @@
 <template>
   <div class="destination">
     <h5><span>01</span>pick your destination</h5>
-    <div class="destination__planet">
-      <img
-        :src="require(`@/assets/destination/image-${selectedMoon.name}.webp`)"
-        alt=""
-      />
-    </div>
-    <div class="destination__info">
-      <MoonSelector :moons="moons" />
-      <MoonInfo :moon="selectedMoon" />
+    <div class="container">
+      <div class="destination__planet">
+        <img
+          :src="require(`@/assets/destination/image-${selectedMoon.name}.webp`)"
+          alt=""
+        />
+      </div>
+      <div class="destination__info">
+        <MoonSelector :moons="moons" />
+        <MoonInfo :moon="selectedMoon" />
+      </div>
     </div>
   </div>
 </template>
@@ -51,9 +53,23 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
 
+  @include mq-up($medium) {
+    padding: 8rem 2.5rem 2.5rem 2.5rem;
+    background-image: url("../assets/destination/background-destination-tablet.jpg");
+  }
+
+  @include mq-up($large) {
+    padding: 12.75rem 10.125rem 0 10.125rem;
+    background-image: url("../assets/destination/background-destination-desktop.jpg");
+  }
+
   h5 {
     text-transform: uppercase;
     color: $clr-white;
+
+    @include mq-up($medium) {
+      align-self: flex-start;
+    }
 
     span {
       font-weight: 600;
@@ -62,15 +78,46 @@ export default {
     }
   }
 
+  .container {
+    @include mq-up($large) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4rem;
+    }
+    @include mq-up($x-large) {
+      max-width: 120rem;
+      padding: 0 5vw 0 5vw;
+    }
+  }
+
   &__planet {
     display: grid;
     place-items: center;
     width: 100%;
-    padding: 1.875rem;
+    margin: 1.875rem 0;
+
+    @include mq-up($medium) {
+      margin: 3.75rem 0 3.3125rem 0;
+    }
+
+    @include mq-up($large) {
+      justify-content: start;
+      width: 90%;
+    }
 
     img {
       width: 10.625rem;
       height: auto;
+
+      @include mq-up($medium) {
+        width: 18.75em;
+      }
+
+      @include mq-up($large) {
+        width: 27.8125rem;
+        margin-left: 1.5rem;
+      }
     }
   }
 

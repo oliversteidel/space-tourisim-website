@@ -31,7 +31,7 @@ export default {
 
 .home {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   padding: 1.5rem;
   background-image: url("../assets/home/background-home-mobile.jpg");
   background-repeat: no-repeat;

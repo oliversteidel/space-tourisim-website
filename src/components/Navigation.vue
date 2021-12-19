@@ -1,5 +1,5 @@
 <template>
-  <div class="nav flex">
+  <div class="nav">
     <div class="nav__logo">
       <img src="../assets/shared/logo.svg" alt="" />
     </div>
@@ -58,6 +58,7 @@ export default {
   position: fixed;
   width: 100vw;
   height: 5.5rem;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   background: transparent;
@@ -177,7 +178,7 @@ export default {
   }
 
   &__burger {
-    position: fixed;
+    position: absolute;
     right: 1.5rem;
     cursor: pointer;
 

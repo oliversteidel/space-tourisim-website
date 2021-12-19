@@ -28,6 +28,16 @@ export default {
 
 <style lang="scss" scoped>
 @use "../style/scss/setup/index" as *;
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include mq-up($large) {
+    justify-content: flex-start;
+  }
+}
 .selector-list {
   display: flex;
 
