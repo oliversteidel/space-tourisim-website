@@ -68,6 +68,7 @@ export default {
   }
 
   .body-text {
+    color: $clr-purple;
     font-size: 0.9375rem;
     line-height: 25px;
 

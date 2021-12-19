@@ -15,15 +15,17 @@
         />
       </div>
       <SelectMember :crew="crew" />
+      <CrewInfo :selectedMember="selectedCrewMember" />
     </div>
   </div>
 </template>
 
 <script>
 import SelectMember from "../components/SelectMember.vue";
+import CrewInfo from "../components/CrewInfo.vue";
 export default {
   name: "Crew",
-  components: { SelectMember },
+  components: { SelectMember, CrewInfo },
   computed: {
     crew() {
       return this.$store.state.crew;

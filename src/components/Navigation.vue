@@ -1,8 +1,10 @@
 <template>
   <div class="nav">
-    <div class="nav__logo">
-      <img src="../assets/shared/logo.svg" alt="" />
-    </div>
+    <router-link :to="{ name: 'Home' }">
+      <div class="nav__logo">
+        <img src="../assets/shared/logo.svg" alt="" />
+      </div>
+    </router-link>
     <div class="nav__links-container" :class="{ open: navOpen }">
       <ul class="nav__links">
         <li class="nav__link">
@@ -143,13 +145,15 @@ export default {
         }
 
         .router-link-active::after {
-          content: "";
-          position: absolute;
-          top: 3.5rem;
-          left: 0;
-          width: 100%;
-          height: 3px;
-          background: $clr-white;
+          @include mq-up($medium) {
+            content: "";
+            position: absolute;
+            top: 3.5rem;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: $clr-white;
+          }
         }
       }
 
