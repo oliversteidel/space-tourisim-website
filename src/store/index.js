@@ -9,7 +9,7 @@ export default createStore({
           "See our planet as you've never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you're there, take in some history by visiting the Luna 2 and Apollo 11 landing sites",
         distance: "384,400 km",
         travelTime: "3 days",
-        imgURL: "src/assets/destination/image-moon.webp",
+
         isSelected: true,
       },
       {
@@ -18,7 +18,7 @@ export default createStore({
           "Don't forget to pack your hiking boots. You'll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It's two and a half times the size of Everest!",
         distance: "225 mil. km",
         travelTime: "9 month",
-        imgURL: "../assets/destination/image-mars.webp",
+
         isSelected: false,
       },
       {
@@ -27,7 +27,7 @@ export default createStore({
           "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover's dream. With an icy surface, it's perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin",
         distance: "628 mil. km",
         travelTime: "3 years",
-        imgURL: "../assets/destination/image-europa.webp",
+
         isSelected: false,
       },
       {
@@ -36,7 +36,37 @@ export default createStore({
           "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundret degrees colder!). As a bonus, you get striking views of the rings of Saturn.",
         distance: "1.6 bil km",
         travelTime: "7 years",
-        imgURL: "../assets/destination/image-titan.webp",
+
+        isSelected: false,
+      },
+    ],
+    crew: [
+      {
+        name: "douglas hurley",
+        title: "commander",
+        descText:
+          "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
+        isSelected: true,
+      },
+      {
+        name: "mark shuttleworth",
+        title: "mission specialist",
+        descText:
+          "Mark Richard Shuttleworth is the fouder and CEO of Canonical, the company behind the Linux-Based Ubuntu operating system. Shuttleworth became the forst South African to travel to space ans a space tourist.",
+        isSelected: false,
+      },
+      {
+        name: "victor glover",
+        title: "pilot",
+        descText:
+          "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18. He was a crew member of Expedition 64, and served as a station systems flight engineer.",
+        isSelected: false,
+      },
+      {
+        name: "anousheh ansari",
+        title: "flight engineer",
+        descText:
+          "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
         isSelected: false,
       },
     ],
@@ -48,6 +78,15 @@ export default createStore({
           moon.isSelected = true;
         } else {
           moon.isSelected = false;
+        }
+      });
+    },
+    toggleSelectedCrewMember(state, payload) {
+      state.crew.forEach((member) => {
+        if (member.name == payload) {
+          member.isSelected = true;
+        } else {
+          member.isSelected = false;
         }
       });
     },

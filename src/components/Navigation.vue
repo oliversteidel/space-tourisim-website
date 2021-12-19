@@ -22,7 +22,12 @@
           >
         </li>
         <li class="nav__link">
-          <a href="#" class="nav-text"><span>02</span>CREW</a>
+          <router-link
+            :to="{ name: 'Crew' }"
+            class="nav-text"
+            @click="toggleNav"
+            ><span>02</span>CREW</router-link
+          >
         </li>
         <li class="nav__link">
           <a href="#" class="nav-text"><span>03</span>TECHNOLOGY</a>
