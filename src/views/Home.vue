@@ -86,8 +86,9 @@ export default {
   }
 
   &__cta-container {
+    display: flex;
+    justify-content: center;
     @include mq-up($large) {
-      display: flex;
       width: 100%;
       padding: 8.8125rem;
       align-items: flex-end;

@@ -113,6 +113,7 @@ export default {
       }
 
       .nav__link {
+        position: relative;
         margin-bottom: 1.5rem;
 
         @include mq-up($medium) {
@@ -131,10 +132,36 @@ export default {
             }
 
             @include mq-up($large) {
-              display: initial;
+              display: inline;
             }
           }
         }
+
+        .router-link-active::after {
+          content: "";
+          position: absolute;
+          top: 3.5rem;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: $clr-white;
+        }
+      }
+
+      .nav__link::after {
+        content: "";
+        position: absolute;
+        top: 3.5rem;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: $clr-nav-hover;
+        opacity: 0;
+        transition: opacity 0.25s ease-in;
+      }
+
+      .nav__link:hover::after {
+        opacity: 1;
       }
 
       .nav__link + .nav__link {
