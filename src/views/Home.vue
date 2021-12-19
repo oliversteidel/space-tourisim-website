@@ -12,7 +12,9 @@
         </p>
       </div>
       <div class="home__cta-container">
-        <button class="home__cta">EXPLORE</button>
+        <router-link :to="{ name: 'Destination' }" class="home__cta"
+          >EXPLORE</router-link
+        >
       </div>
     </div>
   </div>
@@ -91,18 +93,21 @@ export default {
       align-items: flex-end;
       justify-content: flex-end;
     }
-    button {
+    .home__cta {
+      display: grid;
+      place-items: center;
       position: relative;
       width: 9.375rem;
       height: 9.375rem;
       margin-top: 5rem;
       color: $clr-black;
       background: $clr-white;
-      border: none;
       border-radius: 50%;
       font-size: 1.25rem;
       font-weight: 400;
       letter-spacing: 1.25px;
+      outline: 100px solid transparent;
+      transition: outline-color 0.25s ease-out;
       cursor: pointer;
 
       @include mq-up($medium) {
@@ -119,8 +124,8 @@ export default {
       }
     }
 
-    button:hover {
-      outline: 100px solid $clr-light-grey;
+    .home__cta:hover {
+      outline-color: $clr-light-grey;
     }
   }
 }
