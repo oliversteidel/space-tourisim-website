@@ -42,9 +42,26 @@ export default {
   display: flex;
 
   &__item {
+    position: relative;
     color: $clr-purple;
     transition: color 0.3s ease-out;
     cursor: pointer;
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 125%;
+    left: 0;
+    width: 95%;
+    height: 3px;
+    background-color: $clr-nav-hover;
+    opacity: 0;
+    transition: opacity 0.25s ease-in;
+  }
+
+  &__item:hover::before {
+    opacity: 1;
   }
 
   li + li {
@@ -64,6 +81,7 @@ export default {
     width: 95%;
     height: 3px;
     background-color: $clr-white;
+    z-index: 99;
   }
 }
 </style>
