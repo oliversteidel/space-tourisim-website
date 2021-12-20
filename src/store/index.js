@@ -70,6 +70,32 @@ export default createStore({
         isSelected: false,
       },
     ],
+    techs: [
+      {
+        name: "launch vehicle",
+        descText:
+          "A launch vehicle or carrier rocket is a rocket-poopelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch.",
+        imgStringLandscape: "launch-vehicle-landscape",
+        imgStringPortrait: "launch-vehicle-portrait",
+        isSelected: true,
+      },
+      {
+        name: "spaceport",
+        descText:
+          "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth's rotation for launch",
+        imgStringLandscape: "spaceport-landscape",
+        imgStringPortrait: "spaceport-portrait",
+        isSelected: false,
+      },
+      {
+        name: "space capsule",
+        descText:
+          "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spand your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained",
+        imgStringLandscape: "space-capsule-landscape",
+        imgStringPortrait: "space-capsule-portrait",
+        isSelected: false,
+      },
+    ],
   },
   mutations: {
     toggleSelectedMoon(state, payload) {
@@ -87,6 +113,15 @@ export default createStore({
           member.isSelected = true;
         } else {
           member.isSelected = false;
+        }
+      });
+    },
+    toggleSelectedTech(state, payload) {
+      state.techs.forEach((tech) => {
+        if (tech.name == payload) {
+          tech.isSelected = true;
+        } else {
+          tech.isSelected = false;
         }
       });
     },

@@ -32,7 +32,12 @@
           >
         </li>
         <li class="nav__link">
-          <a href="#" class="nav-text"><span>03</span>TECHNOLOGY</a>
+          <router-link
+            :to="{ name: 'Technology' }"
+            class="nav-text"
+            @click="toggleNav"
+            ><span>03</span>TECHNOLOGY</router-link
+          >
         </li>
       </ul>
     </div>
