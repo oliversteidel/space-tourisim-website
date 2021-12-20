@@ -52,7 +52,7 @@ export default createStore({
         name: "mark shuttleworth",
         title: "mission specialist",
         descText:
-          "Mark Richard Shuttleworth is the fouder and CEO of Canonical, the company behind the Linux-Based Ubuntu operating system. Shuttleworth became the forst South African to travel to space ans a space tourist.",
+          "Mark Richard Shuttleworth is the fouder and CEO of Canonical, the company behind the Linux-Based Ubuntu operating system. Shuttleworth became the first South African to travel to space and a space tourist.",
         isSelected: false,
       },
       {

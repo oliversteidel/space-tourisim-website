@@ -20,7 +20,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+
+  @include mq-up($large) {
+    align-items: flex-start;
+  }
 
   h4 {
     color: $clr-nav-hover;
@@ -33,6 +36,11 @@ export default {
 
   p {
     text-align: center;
+    max-width: 50ch;
+
+    @include mq-up($large) {
+      text-align: left;
+    }
   }
 }
 </style>

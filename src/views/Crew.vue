@@ -14,8 +14,10 @@
           alt=""
         />
       </div>
-      <SelectMember :crew="crew" />
-      <CrewInfo :selectedMember="selectedCrewMember" />
+      <div class="wrapper">
+        <SelectMember :crew="crew" />
+        <CrewInfo :selectedMember="selectedCrewMember" />
+      </div>
     </div>
   </div>
 </template>
@@ -57,13 +59,14 @@ export default {
   background-repeat: no-repeat;
 
   @include mq-up($medium) {
-    //padding: 8rem 2.5rem 2.5rem 2.5rem;
+    padding: 8.5rem 2.5rem 0 2.5rem;
     background-image: url("../assets/crew/background-crew-tablet.jpg");
   }
 
   @include mq-up($large) {
-    //padding: 12.75rem 10.125rem 0 10.125rem;
+    padding: 13.125rem 2rem 0 10rem;
     background-image: url("../assets/crew/background-crew-desktop.jpg");
+    justify-content: space-between;
   }
 
   h5 {
@@ -87,15 +90,46 @@ export default {
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
+
+    @include mq-up($medium) {
+      flex-direction: column-reverse;
+      margin-top: 3.75rem;
+    }
+
+    @include mq-up($large) {
+      flex-direction: row-reverse;
+      margin-top: 0;
+    }
   }
 
   &__member {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     border-bottom: 1px solid $clr-grey;
+
+    @include mq-up($medium) {
+      border: none;
+    }
+
     img {
-      height: clamp(13.875rem, -13.4367rem + 116.53vw, 42.5rem);
+      height: clamp(13.875rem, -3.3rem + 73.28vw, 42.5rem);
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq-up($medium) {
+      flex-direction: column-reverse;
+    }
+
+    @include mq-up($large) {
+      align-items: flex-start;
     }
   }
 }

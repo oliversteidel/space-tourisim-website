@@ -26,7 +26,11 @@ export default {
 
 .selector {
   display: flex;
-  margin-top: 2rem;
+  margin: 2rem 0;
+
+  @include mq-up($medium) {
+    margin: 2.5rem 0;
+  }
 
   button {
     width: 0.625rem;
