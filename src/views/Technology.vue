@@ -62,12 +62,12 @@ export default {
   background-repeat: no-repeat;
 
   @include mq-up($medium) {
-    //padding: 8.5rem 2.5rem 0 2.5rem;
+    padding: 8.5rem 2.5rem 0 2.5rem;
     background-image: url("../assets/technology/background-technology-tablet.jpg");
   }
 
   @include mq-up($large) {
-    //padding: 13.125rem 2rem 0 10rem;
+    padding: 13.125rem 0 0 10rem;
     background-image: url("../assets/technology/background-technology-desktop.jpg");
   }
 
@@ -91,11 +91,22 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include mq-up($large) {
+      //width: 100vw;
+      flex-direction: row;
+    }
   }
 
   &__img-wrapper {
     width: 100vw;
     margin-top: 2rem;
+
+    @include mq-up($large) {
+      order: 3;
+      display: flex;
+      justify-content: flex-end;
+    }
 
     img {
       min-height: 10.625rem;

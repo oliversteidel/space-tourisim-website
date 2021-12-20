@@ -41,6 +41,7 @@ export default {
 
     @include mq-up($large) {
       text-align: left;
+      max-width: 47ch;
     }
   }
 }
